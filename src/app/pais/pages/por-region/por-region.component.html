@@ -1,0 +1,42 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+    <h3>Buscar por Region <small>{{regionActiva | titlecase}}</small></h3>
+    <!-- <ul class="list-group">
+        <li class="list-group-item">EU (European Union)</li>
+        <li class="list-group-item">EFTA (European Free Trade Association)</li>
+        <li class="list-group-item">CARICOM (Caribbean Community)</li>
+        <li class="list-group-item">PA (Pacific Alliance)</li>
+        <li class="list-group-item">AU (African Union)</li>
+        <li class="list-group-item">USAN (Union of South American Nations)</li>
+        <li class="list-group-item">EEU (Eurasian Economic Union)</li>
+        <li class="list-group-item">AL (Arab League)</li>
+        <li class="list-group-item">ASEAN (Association of Southeast Asian Nations)</li>
+        <li class="list-group-item">CAIS (Central American Integration System)</li>
+        <li class="list-group-item">CEFTA (Central European Free Trade Agreement)</li>
+        <li class="list-group-item">NAFTA (North American Free Trade Agreement)</li>
+        <li class="list-group-item">SAARC (South Asian Association for Regional Cooperation)</li>
+    </ul> -->
+    <hr>
+    <h5>Seleccione una region</h5>
+    <div class="row">
+        <div class="col">
+            <!-- [class.btn-primary]=" continente === continenteActivo " -->
+            <button *ngFor="let region of regiones"
+                    class="m-1"
+                    [class]="getClassCSS( region )"
+                    (click)="activarRegion( region )">
+                {{region | titlecase }}
+            </button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="hayError" 
+    class="alert alert-danger">
+    No se encontró nada con el término {{termino}}
+</div>
+
+<div *ngIf="paises.length > 0" class="row">
+    <div class="col">
+        <app-pais-tabla [paises]="paises"></app-pais-tabla>
+    </div>
+</div>

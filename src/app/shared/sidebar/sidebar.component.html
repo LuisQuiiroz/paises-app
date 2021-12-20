@@ -1,0 +1,21 @@
+<h2>Busquedas</h2>
+<hr>
+<ul class="list-group">
+    <!-- routerLinkActive="" clase que se quiere añadir al link, cuando se encuentre en ese URL -->
+    <!-- [routerLinkActiveOptions]="{exact: true}" quiere decir que tiene que ser exactamente ese link para que la clases pueda aplicarse -->
+    <li routerLink="" 
+    routerLinkActive="active" 
+    [routerLinkActiveOptions]="{exact: true}"
+    class="list-group-item">
+    Por país</li>
+
+    <li routerLink="region" 
+    routerLinkActive="active" 
+    class="list-group-item">
+    Por Region</li>
+
+    <li routerLink="capital" 
+    routerLinkActive="active" 
+    class="list-group-item">
+    Por capital</li>
+</ul>
